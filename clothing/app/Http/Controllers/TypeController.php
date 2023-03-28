@@ -48,7 +48,6 @@ class TypeController extends Controller
         return $this->create("O tipo foi editado com sucesso!!!");
     }
 
-
     public function destroy($id)
     {
         Type::destroy($id);
