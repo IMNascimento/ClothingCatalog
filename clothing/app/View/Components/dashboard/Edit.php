@@ -6,19 +6,18 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Main extends Component
+class Edit extends Component
 {
-    /**
-     * Create a new component instance.
-     */
+    public $part;
     public $validate;
-    public $item;
-    public $msg;
-    public function __construct($validate, $item, $msg)
+    public $types;
+    public $list;
+    public function __construct($part, $types, $validate, $list)
     {
+        $this->part = $part;
+        $this->types = $types;
         $this->validate = $validate;
-        $this->item = $item;
-        $this->msg = $msg;
+        $this->list = $list;
     }
 
     /**
@@ -26,6 +25,6 @@ class Main extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.dashboard.main');
+        return view('components.dashboard.edit');
     }
 }

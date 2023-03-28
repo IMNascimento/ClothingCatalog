@@ -15,7 +15,7 @@
               {{ __('Log Out') }}
           </x-dropdown-link>
       </form>
-        <!--<a class="nav-link px-3" href="/logout">Logout</a>-->
+        
       </div>
       
     </div>

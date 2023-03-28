@@ -5,33 +5,33 @@
       </h6>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">
+          <a class="nav-link active" aria-current="page" href="/dashboard">
             <span data-feather="home" class="align-text-bottom"></span>
             Dashboard
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#Parts">
             <span data-feather="file" class="align-text-bottom"></span>
-            Orders
+            Peças
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#Types">
             <span data-feather="shopping-cart" class="align-text-bottom"></span>
-            Products
+            Tipo
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="/dashboard/parts">
             <span data-feather="users" class="align-text-bottom"></span>
-            Customers
+            Listar Peças
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="/dashboard/types">
             <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-            Reports
+            Listar Tipos
           </a>
         </li>
         <li class="nav-item">

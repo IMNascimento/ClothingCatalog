@@ -7,59 +7,51 @@ use Illuminate\Http\Request;
 
 class TypeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
-        //
+        return view('dashboard.dashboard',['type'=> Type::all(), 'validate'=>'Tipos', 'result'=>Type::paginate(10), 'msg'=>"não"]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+ 
+    public function create($msg)
     {
-        //
+        return view('dashboard.dashboard',['type'=> Type::all(), 'validate'=>'Tipos', 'result'=>Type::paginate(10), 'msg'=>$msg]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $db = New Type;
+        $db->name = $request->name;
+        $db->save();
+        return $this->create("Item foi cadastrado com sucesso!");
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Type $type)
+    public function show($id)
     {
-        //
+        $type = Type::find($id);
+        return view('dashboard.dashboard',['type'=> Type::all(), 'validate'=>'showTypes', 'part'=>"",'types'=> $type]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Type $type)
+
+    public function edit($id)
     {
-        //
+        $type = Type::find($id);
+        return view('dashboard.dashboard',['type'=> Type::all(), 'validate'=>'editTypes', 'part'=>"",'types'=> $type]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Type $type)
+    public function update(Request $request, $id)
     {
-        //
+        $update = Type::findOrFail($id);
+        $update->name = $request->name;
+        $update->save();
+        return $this->create("O tipo foi editado com sucesso!!!");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Type $type)
+
+    public function destroy($id)
     {
-        //
+        Type::destroy($id);
+        return $this->create("O tipo foi DELETADO com sucesso!!!");
     }
 }
