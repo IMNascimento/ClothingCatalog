@@ -4,6 +4,9 @@
       <h1 class="h2">Visualização Peças</h1>
     </div>
     <div class="container">
+        <div class="input-group">
+          <img src="{{Storage::url($part->path)}}" class="img-fluid" alt="{{$part->name}}">
+        </div>
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Nome</label>
             <input type="text" class="form-control" id="formGroupExampleInput" disabled name="name" value="{{$part->name}}">
@@ -22,6 +25,7 @@
             <span class="input-group-text">descrição</span>
             <textarea class="form-control" aria-label="With textarea" name="description" disabled>{{$part->description}}</textarea>
         </div>
+        
     </div>
     
 @elseif ($validate == "showTypes")

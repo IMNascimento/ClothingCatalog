@@ -6,7 +6,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
         </div>
         <div class="modal-body">
-          <form action="/dashboard/parts" method="post">
+          <form action="/dashboard/parts" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Nome</label>
@@ -27,6 +27,10 @@
             <div class="input-group">
                 <span class="input-group-text">descrição</span>
                 <textarea class="form-control" aria-label="With textarea" name="description"></textarea>
+            </div>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupFile01">Upload</label>
+              <input type="file" class="form-control" name="path" id="inputGroupFile01">
             </div>
         </div>
         <div class="modal-footer">

@@ -7,18 +7,14 @@ use Illuminate\Http\Request;
 
 class TypeController extends Controller
 {
-    
     public function index()
     {
         return view('dashboard.dashboard',['type'=> Type::all(), 'validate'=>'Tipos', 'result'=>Type::paginate(10), 'msg'=>"não"]);
     }
-
- 
     public function create($msg)
     {
         return view('dashboard.dashboard',['type'=> Type::all(), 'validate'=>'Tipos', 'result'=>Type::paginate(10), 'msg'=>$msg]);
     }
-
     public function store(Request $request)
     {
         $db = New Type;
@@ -26,14 +22,11 @@ class TypeController extends Controller
         $db->save();
         return $this->create("Item foi cadastrado com sucesso!");
     }
-
     public function show($id)
     {
         $type = Type::find($id);
         return view('dashboard.dashboard',['type'=> Type::all(), 'validate'=>'showTypes', 'part'=>"",'types'=> $type]);
     }
-
-
     public function edit($id)
     {
         $type = Type::find($id);

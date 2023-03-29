@@ -4,7 +4,7 @@
       <h1 class="h2">Edição Peças</h1>
     </div>
     <div class="container">
-        <form action="{{url('dashboard/parts/' . $part->id)}}" method="post">
+        <form action="{{url('dashboard/parts/' . $part->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -27,6 +27,14 @@
         <div class="input-group">
             <span class="input-group-text">descrição</span>
             <textarea class="form-control" aria-label="With textarea" name="description" >{{$part->description}}</textarea>
+        </div>
+        <div class="input-group">
+            <img src="{{Storage::url($part->path)}}" class="img-fluid" alt="{{$part->name}}">
+            <input type="hidden" name="img" value="{{$part->path}}">
+        </div>
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupFile01">Upload</label>
+            <input type="file" class="form-control" name="path" id="inputGroupFile01">
         </div>
         <div class="input-group">
             <button type="submit" class="btn btn-warning">Editar</button>

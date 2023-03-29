@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/dashboard',['App\Http\Controllers\PartController', 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', [PartController::class, 'init']);
+Route::get('/pesquisa/{id}', [PartController::class, 'search']);
+Route::get('/dashboard',[PartController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -26,7 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('dashboard/parts', 'App\Http\Controllers\PartController');
+Route::resource('dashboard/parts', PartController::class);
 Route::resource('dashboard/types', 'App\Http\Controllers\TypeController');
 
 require __DIR__.'/auth.php';
