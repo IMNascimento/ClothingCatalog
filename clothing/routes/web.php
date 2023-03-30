@@ -18,19 +18,18 @@ use App\Http\Controllers\TypeController;
 
 Route::get('/', [PartController::class, 'init']);
 Route::get('/pesquisa/{id}', [PartController::class, 'search']);
-Route::post('/subscribe', [EmailController::class, 'subscribe']);
+Route::get('/produto/{id}', [PartController::class, 'product']);
 Route::get('/contato', [PartController::class, 'contact']);
-Route::post('/email', [EmailController::class, 'contact']);
 Route::post('/procura', [PartController::class, 'researches']);
 Route::get('/dashboard',[PartController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::post('/subscribe', [EmailController::class, 'subscribe']);
+Route::get('/listar/email', [EmailController::class, 'index']);
+Route::post('/email', [EmailController::class, 'contact']);
+Route::resource('dashboard/parts', PartController::class);
+Route::resource('dashboard/types', TypeController::class);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::resource('dashboard/parts', PartController::class);
-Route::resource('dashboard/types', TypeController::class);
-
 require __DIR__.'/auth.php';

@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <img src="img/add.jpg" alt="">
+                    <img src="{{Storage::url('img/add.jpg')}}" alt="add">
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                                 </form>
                             </div>
                             <div class="cf-right">
-                                <span>{{$total}} Products</span>
+                                <span>{{$total}} Produtos</span>
                                 {{$result->links()}}
                             </div>
                         </div>

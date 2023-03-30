@@ -115,4 +115,14 @@ class PartController extends Controller
         return view('contact');
     }
 
+    public function product($id)
+    {
+        $type = Part::find($id)->types;
+        return view('product-page',['part'=> Part::find($id),'type'=>$type, 'relation'=> $this->relationProduct($type->id)]);
+    }
+
+    public function relationProduct($type)
+    {
+        return Part::where('type_id', $type)->paginate(4);
+    }
 }

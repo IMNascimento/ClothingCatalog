@@ -4,6 +4,27 @@
       <h1 class="h2">{{$validate}}</h1>
     </div>
   </main>
+@elseif ($validate == "email")
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">{{$validate}}</h1>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col"><strong> #</strong></div>
+        <div class="col"><strong> Email</strong></div>
+      </div>
+      @foreach ($item as $key)
+        <div class="row">
+          <div class="col">{{$key->id}}</div>
+          <div class="col">{{$key->email}}</div>
+        </div>
+        <hr>
+      @endforeach
+    </div>
+    {{$item->links()}}
+  </main>
 @elseif ($validate == "Peças")
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">

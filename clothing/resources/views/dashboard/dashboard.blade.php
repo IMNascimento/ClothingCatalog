@@ -12,7 +12,7 @@
     <x-dashboard.modal.parts :type="$type"/>
 @endif
 <x-dashboard.modal.types/>
-@if ($validate == "Dashboard" OR $validate == "Peças" OR $validate == "Tipos")
+@if ($validate == "Dashboard" OR $validate == "Peças" OR $validate == "Tipos" OR $validate == "email")
     <x-dashboard.main :validate="$validate" :item="$result" :msg="$msg"/> 
 @elseif($validate == "showParts" OR $validate == "showTypes")
     <x-dashboard.show :validate="$validate" :types="$types" :part="$part"/>

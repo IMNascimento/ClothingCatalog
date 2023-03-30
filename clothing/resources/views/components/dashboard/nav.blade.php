@@ -35,39 +35,39 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="/listar/email">
             <span data-feather="layers" class="align-text-bottom"></span>
-            Integrations
+            Listar Email
           </a>
         </li>
       </ul>
 
       <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
-        <span>Saved reports</span>
+        <span>Versões Futuras</span>
       </h6>
       <ul class="nav flex-column mb-2">
         <li class="nav-item">
           <a class="nav-link" href="#">
             <span data-feather="file-text" class="align-text-bottom"></span>
-            Current month
+            Gerenciamento Layout
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
             <span data-feather="file-text" class="align-text-bottom"></span>
-            Last quarter
+            Blog
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
             <span data-feather="file-text" class="align-text-bottom"></span>
-            Social engagement
+            Compra e Promoções
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
             <span data-feather="file-text" class="align-text-bottom"></span>
-            Year-end sale
+            Gestão de Estoque
           </a>
         </li>
       </ul>

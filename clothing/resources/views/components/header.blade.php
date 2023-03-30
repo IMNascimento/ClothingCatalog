@@ -27,15 +27,14 @@
                 <nav class="main-menu mobile-menu">
                     <ul>
                         <li><a class="active" href="/">Home</a></li>
-                        <li><a href="./categories.html">Shop</a>
+                        <li><a href="#">Shop</a>
                             <ul class="sub-menu">
-                                <li><a href="product-page.html">Product Page</a></li>
-                                <li><a href="shopping-cart.html">Shopping Card</a></li>
-                                <li><a href="check-out.html">Check out</a></li>
+                                <li><a href="#">Shopping Card</a></li>
+                                <li><a href="#">Check out</a></li>
                             </ul>
                         </li>
-                        <li><a href="./product-page.html">About</a></li>
-                        <li><a href="./check-out.html">Blog</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
                         <li><a href="/contato">Contato</a></li>
                     </ul>
                 </nav>
