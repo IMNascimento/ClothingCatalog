@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Envio;
 use Illuminate\Http\Request;
 use App\Models\Email;
+use Illuminate\Support\Facades\Mail;
+
 
 class EmailController extends Controller
 {
@@ -16,8 +19,9 @@ class EmailController extends Controller
         return redirect('/');
     }
 
-    public function contact()
+    public function contact(Request $request)
     {
-        
+        Mail::to($request->email)->send(new Envio($request->all()));
+        return view('contact',['msg'=> "Seu email foi enviado com sucesso!"]);
     }
 }

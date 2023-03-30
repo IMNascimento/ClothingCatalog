@@ -9,7 +9,12 @@
     <x-search/>
 
    <x-header/>
-
+    @if (isset($msg))
+    <div class="alert alert-success" role="alert">
+        {{$msg}}
+      </div>
+        
+    @endif
     <!-- Page Add Section Begin -->
     <section class="page-add">
         <div class="container">
@@ -33,6 +38,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <form action="/email" class="contact-form" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-6">
                                 <input type="text" name="name" placeholder="First Name">
@@ -42,8 +48,8 @@
                             </div>
                             <div class="col-lg-12">
                                 <input type="email" name="email" placeholder="E-mail">
-                                <input type="text" name="subject" placeholder="Subject">
-                                <textarea placeholder="Message" name="message"></textarea>
+                                <input type="text" name="subject" placeholder="assunto">
+                                <textarea placeholder="Menssagem" name="message"></textarea>
                             </div>
                             <div class="col-lg-12 text-right">
                                 <button type="submit">Enviar Mensagem</button>
