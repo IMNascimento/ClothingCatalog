@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Email;
 use App\Models\Part;
 use App\Models\Type;
 use Illuminate\Database\Seeder;
@@ -28,7 +29,7 @@ class DatabaseSeeder extends Seeder
                  'password'=> Hash::make('12345678')
              ]);
         
-         Type::create([
+        Type::create([
                  'name' => 'Calça',
              ]);
         Type::create([
@@ -145,7 +146,18 @@ class DatabaseSeeder extends Seeder
                  'type_id' => '2',
                  'path' => '/img/products/img-15.jpg',
              ]);
-        
+        Email::create([
+            'email'=>'mauricio@laravel.com',
+        ]);
+        Email::create([
+            'email'=>'igor@laravel.com',
+        ]);
+        Email::create([
+            'email'=>'jose@gmail.com',
+        ]);
+        Email::create([
+            'email'=>'maria.trindade@gmail.com',
+        ]);
         
     }
 }
