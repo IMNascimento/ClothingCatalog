@@ -104,4 +104,15 @@ class PartController extends Controller
         return $this->create("A peça foi DELETADA com sucesso!!!");
     }
 
+    public function researches(Request $request)
+    {
+        $d = Part::where('name', 'Like', '%'.$request->search.'%')->orWhere('description', 'Like', '%'. $request->search.'%')->paginate(6);
+        return view('search',['result'=> $d, 'total' => count($d) ]);
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
 }

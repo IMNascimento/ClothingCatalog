@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="inner-header">
                 <div class="logo">
-                    <a href="./index.html"><img src="{{Storage::url('img/logo.png')}}" alt="logo"></a>
+                    <a href="/"><img src="{{Storage::url('img/logo.png')}}" alt="logo"></a>
                 </div>
                 <div class="header-right">
                     <img src="{{Storage::url('img/icons/search.png')}}" alt="" class="search-trigger">
@@ -26,7 +26,7 @@
                 </div>
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a class="active" href="./index.html">Home</a></li>
+                        <li><a class="active" href="/">Home</a></li>
                         <li><a href="./categories.html">Shop</a>
                             <ul class="sub-menu">
                                 <li><a href="product-page.html">Product Page</a></li>
@@ -36,7 +36,7 @@
                         </li>
                         <li><a href="./product-page.html">About</a></li>
                         <li><a href="./check-out.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="/contato">Contato</a></li>
                     </ul>
                 </nav>
             </div>

@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PartController;
+use App\Http\Controllers\EmailController;
+use App\Http\Controllers\TypeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +18,10 @@ use App\Http\Controllers\PartController;
 
 Route::get('/', [PartController::class, 'init']);
 Route::get('/pesquisa/{id}', [PartController::class, 'search']);
+Route::post('/subscribe', [EmailController::class, 'subscribe']);
+Route::get('/contato', [PartController::class, 'contact']);
+Route::post('/email', [EmailController::class, 'contact']);
+Route::post('/procura', [PartController::class, 'researches']);
 Route::get('/dashboard',[PartController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -25,6 +31,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('dashboard/parts', PartController::class);
-Route::resource('dashboard/types', 'App\Http\Controllers\TypeController');
+Route::resource('dashboard/types', TypeController::class);
 
 require __DIR__.'/auth.php';
