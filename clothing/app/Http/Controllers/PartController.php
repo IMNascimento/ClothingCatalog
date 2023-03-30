@@ -55,7 +55,6 @@ class PartController extends Controller
         $db->path = $img;
         $db->save();
         return $this->create("A peça foi cadastrada com sucesso!!!");
-        // chamar retorno trazendo 3 parametros tipo resultado e o type do navbar
     }
 
    
