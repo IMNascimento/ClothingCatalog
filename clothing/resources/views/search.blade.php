@@ -61,12 +61,12 @@
                             <img src="{{Storage::url($key->path)}}" alt="{{$key->name}}">
                             <div class="p-status popular">popular</div>
                             <div class="hover-icon">
-                                <a href="img/products/img-4.jpg" class="pop-up"><img src="{{Storage::url($key->path)}}"
+                                <a href="{{url('produto/'. $key->id)}}" class="pop-up"><img src="{{Storage::url($key->path)}}"
                                         alt=""></a>
                             </div>
                         </figure>
                         <div class="product-text">
-                            <a href="#">
+                            <a href="{{url('produto/'. $key->id)}}">
                                 <h6>{{$key->name}}</h6>
                             </a>
                             <p>R$ {{$key->price}}</p>
